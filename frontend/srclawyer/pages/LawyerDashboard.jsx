@@ -1,17 +1,23 @@
-// src_lawyer/pages/LawyerDashboard.jsx
 import React from "react";
-import LawyerSidebar from "../components/LawyerSidebar";
-import Dashboard from "../components/Dashboard";
+import DashboardCard from "../components/DashboardCard";
 
 const LawyerDashboard = () => {
-    return (
-        <div className="lawyer-dashboard">
-            <LawyerSidebar />
-            <main>
-                <Dashboard />
-            </main>
-        </div>
-    );
+  const dashboardData = [
+    { title: "Active Cases", count: 5 },
+    { title: "Appointments Today", count: 3 },
+    { title: "Pending Requests", count: 8 },
+  ];
+
+  return (
+    <div className="dashboard">
+      <h1>Lawyer Dashboard</h1>
+      <div className="dashboard-cards">
+        {dashboardData.map((item, index) => (
+          <DashboardCard key={index} title={item.title} count={item.count} />
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default LawyerDashboard;
