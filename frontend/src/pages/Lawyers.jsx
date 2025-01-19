@@ -1,25 +1,21 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useMemo } from "react";
 import { AppContext } from "../context/AppContext";
 import { useNavigate, useParams } from "react-router-dom";
 
 const Lawyers = () => {
   const { speciality } = useParams();
-  const [filterDoc, setFilterDoc] = useState([]);
   const [showFilter, setShowFilter] = useState(false);
-  const navigate = useNavigate();
   const { lawyers } = useContext(AppContext);
 
-  // Function to filter lawyers based on specialty
-  const applyFilter = () => {
-    const filtered = speciality
-      ? lawyers.filter((lawyer) => lawyer.speciality === speciality)
-      : lawyers;
-    setFilterDoc(filtered);
-  };
-
-  useEffect(() => {
-    applyFilter();
+  // Memoized filter function to improve performance
+  const filteredLawyers = useMemo(() => {
+    if (speciality) {
+      return lawyers.filter((lawyer) => lawyer.speciality === speciality);
+    }
+    return lawyers;
   }, [lawyers, speciality]);
+
+  const navigate = useNavigate();
 
   const specialties = [
     "Criminal Lawyer",
@@ -32,9 +28,7 @@ const Lawyers = () => {
 
   return (
     <div className="px-4 sm:px-8">
-      <p className="text-gray-600 text-lg">
-        Browse through the Lawyers specialists.
-      </p>
+      <p className="text-gray-600 text-lg">Browse through the Lawyers specialists.</p>
 
       <div className="flex flex-col sm:flex-row items-start gap-5 mt-5">
         {/* Toggle Filter Button for Mobile */}
@@ -72,15 +66,15 @@ const Lawyers = () => {
 
         {/* Lawyers Grid */}
         <div className="w-full grid grid-cols-auto gap-4 gap-y-6">
-          {filterDoc.length > 0 ? (
-            filterDoc.map((item) => (
+          {filteredLawyers.length > 0 ? (
+            filteredLawyers.map((item) => (
               <div
                 onClick={() => {
                   navigate(`/appointment/${item._id}`);
                   window.scrollTo(0, 0);
                 }}
-                className="border border-indigo-200 rounded-xl overflow-hidden cursor-pointer hover:translate-y-[-10px] transition-all duration-500"
                 key={item._id}
+                className="border border-indigo-200 rounded-xl overflow-hidden cursor-pointer hover:translate-y-[-10px] transition-all duration-500"
               >
                 <img
                   className="bg-indigo-50 w-full h-40 object-cover"
