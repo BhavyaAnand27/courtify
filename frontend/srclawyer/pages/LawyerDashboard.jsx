@@ -1,5 +1,5 @@
 import React from "react";
-import DashboardCard from "../components/DashboardCard";
+import DashboardCard from "../components/Dashboard";
 
 const LawyerDashboard = () => {
   const dashboardData = [
