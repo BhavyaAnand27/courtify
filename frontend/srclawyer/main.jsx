@@ -1,15 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.js";
-import App from "./App.jsx";
-import "./assets/lawyer.css";
-import { BrowserRouter } from "react-router-dom";
-import AppContextProvider from "./context/AppContext.jsx";
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <AppContextProvider>
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import { LawyerProvider } from './context/AppContext';
 
-     <App />
-     </AppContextProvider>
-  </BrowserRouter>
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <LawyerProvider>
+    <App />
+  </LawyerProvider>
 );
