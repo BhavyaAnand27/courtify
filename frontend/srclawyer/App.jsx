@@ -1,21 +1,42 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Dashboard from './components/Dashboard';
-import Consultations from './components/Consultations';
-import Payments from './components/Payments';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+// Pages
+import CaseStudies from "./pages/CaseStudies";
+import Clients from "./pages/Clients";
+import Dashboard from "./pages/Dashboard";
+import LawyerProfile from "./pages/LawyerProfile";
+import Login from "./pages/Login";
+import MyClients from "./pages/MyClients";
+
+// Components
+import LawyerHeader from "./components/LawyerHeader";
+import LawyerFooter from "./components/LawyerFooter";
+
+// Context
+import { AppContextProvider } from "./context/AppContextProvider";
 
 const App = () => {
   return (
-    <Router>
-      <div>
-        <h1>Testing Lawyer Side</h1>
-        <Routes>
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/consultations" element={<Consultations />} />
-          <Route path="/payments" element={<Payments />} />
-        </Routes>
-      </div>
-    </Router>
+    <AppContextProvider>
+      <Router>
+        <div className="App">
+          <LawyerHeader />
+          <ToastContainer />
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/case-studies" element={<CaseStudies />} />
+            <Route path="/clients" element={<Clients />} />
+            <Route path="/profile" element={<LawyerProfile />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/my-clients" element={<MyClients />} />
+          </Routes>
+          <LawyerFooter />
+        </div>
+      </Router>
+    </AppContextProvider>
   );
 };
 
