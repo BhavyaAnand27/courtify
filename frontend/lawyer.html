@@ -1,78 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Lawyer Dashboard - Manage your appointments, consultations, and profile.">
-  <title>Lawyer Dashboard</title>
-  <link rel="stylesheet" href="styles/lawyer.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lawyer Dashboard - Courtify</title>
+  <!-- Correct the path to the CSS file -->
+  <link rel="stylesheet" href="/srclawyer/assets/lawyer.css" />
 </head>
 <body>
-  <header>
-    <nav>
-      <h1>Lawyer Dashboard</h1>
-      <ul>
-        <li><a href="#dashboard">Dashboard</a></li>
-        <li><a href="#profile">Profile</a></li>
-        <li><a href="#appointments">Appointments</a></li>
-        <li><a href="#consultations">Consultations</a></li>
-        <li><a href="#articles">Articles</a></li>
-        <li><a href="#messages">Messages</a></li>
-        <li><a href="#reviews">Reviews</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <section id="dashboard">
-      <h2>Welcome to Your Dashboard</h2>
-      <div class="stats">
-        <div class="card">
-          <h3>Today's Appointments</h3>
-          <p id="today-appointments">Loading...</p>
-        </div>
-        <div class="card">
-          <h3>Pending Consultations</h3>
-          <p id="pending-consultations">Loading...</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="profile">
-      <h2>Your Profile</h2>
-      <p>Edit your details and update your availability.</p>
-    </section>
-
-    <section id="appointments">
-      <h2>Appointments</h2>
-      <p>View and manage your upcoming appointments.</p>
-    </section>
-
-    <section id="consultations">
-      <h2>Consultations</h2>
-      <p>Check consultation requests and respond to clients.</p>
-    </section>
-
-    <section id="articles">
-      <h2>Legal Articles</h2>
-      <p>Post and manage your legal articles here.</p>
-    </section>
-
-    <section id="messages">
-      <h2>Messages</h2>
-      <p>Communicate with clients and colleagues.</p>
-    </section>
-
-    <section id="reviews">
-      <h2>Reviews</h2>
-      <p>View feedback and ratings from clients.</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Courtify. All rights reserved.</p>
-  </footer>
-
-  <script src="scripts/lawyer.js"></script>
+  <!-- Root div for React to mount -->
+  <div id="root"></div>
+  <!-- Correct the path to the main entry file -->
+  <script type="module" src="/srclawyer/main.jsx"></script>
 </body>
 </html>
