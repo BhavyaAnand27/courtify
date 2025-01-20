@@ -1,0 +1,29 @@
+/* src/assets/css/lawyer.css */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.lawyer-sidebar {
+  width: 200px;
+  background-color: #f4f4f4;
+  padding: 1rem;
+}
+
+.lawyer-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.lawyer-sidebar ul li {
+  margin-bottom: 1rem;
+}
+
+.lawyer-sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.lawyer-dashboard-main {
+  margin-left: 220px;
+  padding: 1rem;
+}
