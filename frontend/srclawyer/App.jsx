@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+// import "react-toastify/dist/ReactToastify.css";
 
 // Pages
 import CaseStudies from "./pages/CaseStudies";
@@ -18,26 +18,35 @@ import LawyerFooter from "./components/LawyerFooter";
 // Context
 import { AppContextProvider } from "./context/AppContextProvider";
 
-const App = () => {
+// const App = () => {
+//   return (
+//     <AppContextProvider>
+//       <Router>
+//         <div className="App">
+//           <LawyerHeader />
+//           <ToastContainer />
+//           <Routes>
+//             <Route path="/" element={<Dashboard />} />
+//             <Route path="/case-studies" element={<CaseStudies />} />
+//             <Route path="/clients" element={<Clients />} />
+//             <Route path="/profile" element={<LawyerProfile />} />
+//             <Route path="/login" element={<Login />} />
+//             <Route path="/my-clients" element={<MyClients />} />
+//           </Routes>
+//           <LawyerFooter />
+//         </div>
+//       </Router>
+//     </AppContextProvider>
+//   );
+// };
+
+
+const App =()=> {
   return (
-    <AppContextProvider>
-      <Router>
-        <div className="App">
-          <LawyerHeader />
-          <ToastContainer />
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/case-studies" element={<CaseStudies />} />
-            <Route path="/clients" element={<Clients />} />
-            <Route path="/profile" element={<LawyerProfile />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/my-clients" element={<MyClients />} />
-          </Routes>
-          <LawyerFooter />
-        </div>
-      </Router>
-    </AppContextProvider>
+    <div>
+      <h1>Hello, World!</h1>
+    </div>
   );
-};
+}
 
 export default App;

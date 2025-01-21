@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { assets } from "../assets/assets";
+import { assets } from "../assets/lawyer_img.png";
 
 const LawyerProfile = () => {
   const [isEdit, setIsEdit] = useState(false);
